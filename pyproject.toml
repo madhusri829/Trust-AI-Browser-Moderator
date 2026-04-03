@@ -1,16 +1,15 @@
+[project.scripts]
+server = "server.app:main"
+
 [project]
 name = "trust-ai-moderator"
 version = "0.1.0"
-description = "AI Moderation System"
 dependencies = [
     "fastapi",
     "uvicorn",
     "openenv-core>=0.2.0",
     "requests"
 ]
-
-[project.scripts]
-server = "envs.server:app"
 
 [build-system]
 requires = ["hatchling"]
