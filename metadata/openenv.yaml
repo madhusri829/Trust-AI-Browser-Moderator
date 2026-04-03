@@ -1,8 +1,0 @@
-version: "1.0"
-environment:
-  type: docker
-  image: .
-  port: 8004
-submission:
-  inference_file: inference.py
-  server_file: envs/server.py
