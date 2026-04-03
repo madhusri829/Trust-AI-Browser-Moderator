@@ -1,12 +1,12 @@
 ---
 title: Trust AI Moderator
 emoji: 🛡️
-colorFrom: blue
-colorTo: green
+colorFrom: green
+colorTo: blue
 sdk: docker
 app_port: 8004
+pinned: false
 ---
-
 <div align="center">
 
 # 🤖 **Trust AI Browser Moderator** ### Developed by Madhusri-08
