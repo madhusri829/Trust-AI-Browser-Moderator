@@ -1,11 +1,10 @@
 ---
 title: Trust AI Moderator
 emoji: 🛡️
-colorFrom: green
-colorTo: blue
+colorFrom: blue
+colorTo: green
 sdk: docker
 app_port: 8004
-pinned: false
 ---
 
 <div align="center">
