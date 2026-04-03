@@ -1,8 +1,9 @@
-spec_version: 1
-name: trust-ai-moderator
-type: security_moderation
-runtime: python:3.10
-app:
-  file: envs/server.py
+# openenv.yaml
+version: "1.0"
+environment:
+  type: docker
+  image: .
   port: 8004
-description: "Trustworthy AI-driven browser security moderator focusing on transparency and deep scan capabilities."
+submission:
+  inference_file: inference.py
+  server_file: envs/server.py
