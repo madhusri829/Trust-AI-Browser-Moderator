@@ -1,0 +1,8 @@
+spec_version: 1
+name: trust-ai-moderator
+type: security_moderation
+runtime: python:3.10
+app:
+  file: envs/server.py
+  port: 8004
+description: "Trustworthy AI-driven browser security moderator focusing on transparency and deep scan capabilities."
