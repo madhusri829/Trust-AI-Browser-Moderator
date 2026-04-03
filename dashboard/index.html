@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShieldAI | Master Your Browser</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="landingPage" class="landing-view">
+        <div class="landing-content">
+            <div class="logo-container">
+                <img src="mg.jpg" alt="ShieldAI Logo" class="hero-logo">
+            </div>
+            <div class="badge">Next-Gen Agentic Security</div>
+            <h1>Verify to Trust AI</h1>
+            <p>Neural monitoring active on current browser nodes. Ready for the Agentic AI Era.</p>
+            <button id="enterApp" class="btn-primary-glow">Connected Demo</button>
+        </div>
+    </div>
+
+    <div id="dashboardApp" class="app-container hidden">
+        <aside class="sidebar">
+            <div class="brand">
+                <img src="mg.jpg" alt="MG" class="sidebar-logo">
+                <h2>Shield<span>AI</span></h2>
+            </div>
+            <nav class="nav-links">
+                <div id="nav-dash" class="nav-item active">📊 Dashboard</div>
+                <div id="nav-vault" class="nav-item">🔒 Security Vault</div>
+                <div id="nav-study" class="nav-item">📚 Study Hub</div>
+            </nav>
+            <div class="user-tag">Developer: Madhu</div>
+        </aside>
+
+        <main class="main-content">
+            <section id="dashView" class="page-view">
+                <header class="dashboard-header">
+                    <div class="title-group">
+                        <h1>System Overview</h1>
+                        <p>Neural monitoring active on current browser nodes.</p>
+                    </div>
+
+                    <div class="header-btns">
+                        <button id="togglePrivacy" class="btn-primary-glow">🔐 Privacy Mode</button>
+                        <button id="scanContent" class="btn-primary-glow">🔍 Run Deep Scan</button>
+                    </div>
+
+                    <div class="status-indicator">
+                        <span id="privacyStatusLabel">Privacy Status: </span>
+                        <span id="privacyStatusDot">● ACTIVE & SECURE</span>
+                    </div>
+                </header>
+
+                <section class="metrics-grid">
+                    <div class="card metric">
+                        <span class="label">Spam Intercepted</span>
+                        <h2 id="spamCount">0</h2>
+                        <div class="trend">+12% vs last session</div>
+                    </div>
+                    <div class="card metric active-metric">
+                        <span class="label">Shield Status</span>
+                        <h2 id="shieldStatus">✅ SECURE</h2>
+                        <div class="trend">Anti-Redirect Active</div>
+                    </div>
+                    <div class="card metric">
+                        <span class="label">Organized Assets</span>
+                        <h2 id="studyCount">0</h2>
+                        <div class="trend">Categorized by AI</div>
+                    </div>
+                </section>
+
+                <div class="content-grid">
+                    <section class="card data-panel">
+                        <div class="panel-top">
+                            <h3>📡 System Audit Log (Observation Space)</h3>
+                            <button id="clearAds" class="btn-primary-glow">🚀 Purge All Ads</button>
+                        </div>
+                        <div id="organizedContent" class="terminal-view">
+                            <div class="log-entry">🟢 ENVIRONMENT_READY: ShieldAI v1.0.4 initialized.</div>
+                        </div>
+                    </section>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div id="privacyOverlay" class="privacy-overlay hidden">
+        <div class="lock-box">
+            <img src="mg.jpg" class="lock-logo" alt="ShieldAI Logo">
+            <h2>EXCLUSIVE PRIVACY</h2>
+            <p>Tabs hidden from unauthorized viewers</p>
+            <input type="password" id="authPin" placeholder="PIN: 1234" maxlength="4">
+            <button id="unlockBtn" class="btn-primary-glow">VERIFY IDENTITY</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

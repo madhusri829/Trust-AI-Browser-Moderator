@@ -1,0 +1,7 @@
+{
+  "env_name": "shield-ai-moderator",
+  "version": "1.0.4",
+  "system_prompt": "You are a ShieldAI Agent. Monitor content and flag PII or malicious links.",
+  "runtime": "python:3.10",
+  "port": 8004
+}

@@ -1,0 +1,35 @@
+{
+    "scenario": "ai-browser-moderator",
+    "tester": "Madhu",
+    "accuracy": 100.0,
+    "results": [
+        {
+            "Content": "Meeting at 5 PM in the conference room.",
+            "Expected": "APPROVED",
+            "Actual": "APPROVED",
+            "Reward": 0.5,
+            "Success": true
+        },
+        {
+            "Content": "User email: madhu_dev@gmail.com",
+            "Expected": "REJECTED",
+            "Actual": "REJECTED",
+            "Reward": 1.0,
+            "Success": true
+        },
+        {
+            "Content": "Visit http://malicious-link.co/virus",
+            "Expected": "REJECTED",
+            "Actual": "REJECTED",
+            "Reward": 1.0,
+            "Success": true
+        },
+        {
+            "Content": "The project report is attached.",
+            "Expected": "APPROVED",
+            "Actual": "APPROVED",
+            "Reward": 0.5,
+            "Success": true
+        }
+    ]
+}
