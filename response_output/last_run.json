@@ -1,0 +1,21 @@
+{
+    "scenario": "shield-ai-moderator",
+    "tester": "Madhu",
+    "timestamp": "2026-04-03",
+    "results": [
+        {
+            "Content": "Hello team, the meeting is at 5 PM.",
+            "Expected": "APPROVED",
+            "Actual": "APPROVED",
+            "Reward": 0.5,
+            "Success": true
+        },
+        {
+            "Content": "Contact me at madhu_dev@gmail.com",
+            "Expected": "REJECTED",
+            "Actual": "REJECTED",
+            "Reward": 1.0,
+            "Success": true
+        }
+    ]
+}
