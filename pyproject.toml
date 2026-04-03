@@ -1,18 +1,17 @@
-[build-system]
-requires = ["setuptools>=61.0", "wheel"]
-build-backend = "setuptools.build_meta"
-
 [project]
 name = "trust-ai-moderator"
 version = "0.1.0"
-description = "AI-based content moderation system"
-authors = [
-    { name = "Madhu" }
-]
+description = "AI Moderation System"
 dependencies = [
     "fastapi",
     "uvicorn",
-    "python-dotenv",
+    "openenv-core>=0.2.0",
     "requests"
 ]
-requires-python = ">=3.10"
+
+[project.scripts]
+server = "envs.server:app"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build_meta"
