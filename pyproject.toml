@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "trust-ai-moderator"
+version = "0.1.0"
+description = "AI-based content moderation system"
+authors = [
+    { name = "Madhu" }
+]
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "python-dotenv",
+    "requests"
+]
+requires-python = ">=3.10"
