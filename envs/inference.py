@@ -1,40 +1,54 @@
-import json
 import os
+import json
+from openai import OpenAI
 
-class TrustAIInference:
-    def __init__(self):
-        self.version = "1.0.0"
-        self.model_name = "TrustAI-Moderator-v1"
+# 1. Environment Variables (AS PER CHECKLIST)
+# Note: Defaults are only set for BASE_URL and MODEL_NAME
+API_BASE_URL = os.getenv("API_BASE_URL", "https://api.groq.com/openai/v1")
+MODEL_NAME = os.getenv("MODEL_NAME", "llama-3.3-70b-versatile")
+HF_TOKEN = os.getenv("HF_TOKEN") # No default for token!
 
-    def predict(self, input_text: str):
-        """
-        Core logic for detecting PII and Malicious Links.
-        """
-        # Detection logic
-        has_pii = "@" in input_text
-        has_link = "http" in input_text.lower() or "www." in input_text.lower()
+# Optional - if using from_docker_image()
+LOCAL_IMAGE_NAME = os.getenv("LOCAL_IMAGE_NAME")
+
+# 2. Configure OpenAI Client
+client = OpenAI(
+    base_url=API_BASE_URL,
+    api_key=HF_TOKEN
+)
+
+def run_moderation_logic(user_input):
+    """
+    Standardized logic for content moderation.
+    """
+    # Required Structured Logging: START
+    print(f"START: Processing input for {MODEL_NAME}")
+    
+    try:
+        # Example LLM Call (All calls MUST use the configured client)
+        response = client.chat.completions.create(
+            model=MODEL_NAME,
+            messages=[
+                {"role": "system", "content": "You are a Trust AI Moderator. Identify PII or malicious links."},
+                {"role": "user", "content": user_input}
+            ]
+        )
+        prediction = response.choices[0].message.content
         
-        if has_pii or has_link:
-            label = "FLAGGED_UNTRUSTED"
-            score = 0.99
-            reason = "PII or URL detected in input"
-        else:
-            label = "VERIFIED_SAFE"
-            score = 0.95
-            reason = "No sensitive patterns identified"
+        # Required Structured Logging: STEP
+        print(f"STEP: Model responded successfully")
+        
+        return prediction
 
-        return {
-            "prediction": label,
-            "confidence": score,
-            "metadata": {
-                "reason": reason,
-                "model": self.model_name
-            }
-        }
+    except Exception as e:
+        print(f"STEP: Error encountered - {str(e)}")
+        return "ERROR"
+    
+    finally:
+        # Required Structured Logging: END
+        print("END: Moderation task complete")
 
-# For standalone testing
 if __name__ == "__main__":
-    inference = TrustAIInference()
-    test_input = "Contact me at madhu@example.com or visit http://trustai.com"
-    result = inference.predict(test_input)
-    print(json.dumps(result, indent=4))
+    test_text = "Sample user content here."
+    result = run_moderation_logic(test_text)
+    print(f"Final Prediction: {result}")
