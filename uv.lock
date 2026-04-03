@@ -1,0 +1,12 @@
+[[package]]
+name = "trust-ai-moderator"
+version = "0.1.0"
+source = { virtual = "." }
+dependencies = [
+    { name = "fastapi" },
+    { name = "openenv-core" },
+    { name = "uvicorn" },
+]
+
+[metadata]
+lock-version = "1"
